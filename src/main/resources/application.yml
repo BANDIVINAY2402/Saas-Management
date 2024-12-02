@@ -1,12 +1,32 @@
 server:
-  port: ${PORT:8081}
+  port: ${PORT:8082}
 spring:
   data:
     mongodb:
       uri: mongodb+srv://root:root@saasmanagemnet.w5rw1.mongodb.net/mydatabase?retryWrites=true&w=majority&ssl=true
   application:
     name: saasmanagemnet
-
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
 logging:
   level:
     root: DEBUG
+    org.mongodb.driver: DEBUG 
+    
+aws:
+  sns:
+    topicArn: arn:aws:sns:us-east-1:657907747545:SaasManagement 
+  accessKeyId: ASIAZSLS3RLM3W5PKVBE
+  secretKey: mB4CPBeSb8pzpIMUBfGAmuOoNVq89vDjZE4btYM4
+  region: us-east-1
+
